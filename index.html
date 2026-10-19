@@ -1,0 +1,1553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#080808">
+    <meta name="description" content="Sunil Naik's cinematic cybersecurity portfolio.">
+
+    <title>Sunil Naik | Cybersecurity</title>
+
+    <!-- Futuristic Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;700;900&family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap"
+          rel="stylesheet">
+
+    <!-- ALL CSS IN THIS FILE -->
+    <style>
+        :root {
+            --bg: #080808;
+            --card: #111111;
+            --red: #ff2438;
+            --red-dark: #b60017;
+            --white: #f5f5f5;
+            --gray: #a1a1a1;
+            --border: rgba(255, 36, 56, 0.25);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 25px;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--white);
+            font-family: "Rajdhani", "Noto Sans SC", sans-serif;
+            letter-spacing: 0.3px;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            pointer-events: none;
+            background:
+                radial-gradient(
+                    circle at 15% 15%,
+                    rgba(255, 36, 56, 0.09),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 85% 75%,
+                    rgba(255, 36, 56, 0.06),
+                    transparent 30%
+                );
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            font: inherit;
+        }
+
+        img,
+        video {
+            max-width: 100%;
+        }
+
+        .container {
+            width: min(1120px, 90%);
+            margin: auto;
+        }
+
+        .red {
+            color: var(--red);
+        }
+
+        /* NAVIGATION */
+
+        .site-header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 10;
+            padding: 24px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(8, 8, 8, 0.35);
+        }
+
+        .nav-container {
+            width: min(1200px, 90%);
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .logo {
+            font-family: "Orbitron", sans-serif;
+            font-size: 25px;
+            font-weight: 900;
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: var(--red);
+        }
+
+        .navigation {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .navigation a {
+            color: #d2d2d2;
+            font-family: "Orbitron", "Noto Sans SC", sans-serif;
+            font-size: 10px;
+            transition: color 0.3s;
+        }
+
+        .navigation a:hover,
+        .navigation a.active {
+            color: var(--red);
+        }
+
+        .header-button {
+            border: 1px solid var(--red);
+            padding: 11px 16px;
+            color: white;
+            font-family: "Orbitron", sans-serif;
+            font-size: 10px;
+            transition: 0.3s;
+        }
+
+        .header-button:hover {
+            background: var(--red);
+            box-shadow: 0 0 20px rgba(255, 36, 56, 0.35);
+        }
+
+        /* HOME / CAR INTRO */
+
+        .hero-section {
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background: #080808;
+        }
+
+        .hero-video {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            opacity: 0.58;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(5, 5, 5, 0.96) 0%,
+                    rgba(5, 5, 5, 0.72) 48%,
+                    rgba(5, 5, 5, 0.28) 100%
+                ),
+                linear-gradient(
+                    0deg,
+                    #080808 0%,
+                    transparent 35%,
+                    rgba(0, 0, 0, 0.15) 100%
+                );
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            width: min(1120px, 90%);
+            margin: 100px auto 0;
+            padding: 70px 0;
+        }
+
+        .hero-label,
+        .section-eyebrow,
+        .content-label,
+        .ending-label {
+            color: var(--red);
+            font-family: "Share Tech Mono", monospace;
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .hero-label {
+            display: inline-block;
+            border-left: 2px solid var(--red);
+            padding: 9px 14px;
+            background: rgba(255, 36, 56, 0.08);
+            animation: fadeUp 0.8s both;
+        }
+
+        .hero-title {
+            margin-top: 25px;
+            font-family: "Orbitron", "Noto Sans SC", sans-serif;
+            font-size: clamp(43px, 7.5vw, 90px);
+            line-height: 1.1;
+            font-weight: 900;
+            letter-spacing: -3px;
+            text-transform: uppercase;
+            animation: fadeUp 1s 0.15s both;
+        }
+
+        .hero-title span {
+            display: block;
+            color: var(--red);
+            text-shadow:
+                0 0 12px rgba(255, 36, 56, 0.4),
+                0 0 35px rgba(255, 36, 56, 0.18);
+        }
+
+        .hero-description {
+            max-width: 520px;
+            margin-top: 24px;
+            color: #c0c0c0;
+            font-size: 19px;
+            line-height: 1.7;
+            animation: fadeUp 1s 0.3s both;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 32px;
+            animation: fadeUp 1s 0.45s both;
+        }
+
+        .primary-button,
+        .secondary-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 48px;
+            padding: 14px 22px;
+            font-family: "Orbitron", "Noto Sans SC", sans-serif;
+            font-size: 10px;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        .primary-button {
+            color: white;
+            background: var(--red);
+            border: 1px solid var(--red);
+        }
+
+        .primary-button:hover {
+            background: var(--red-dark);
+            box-shadow: 0 0 24px rgba(255, 36, 56, 0.4);
+            transform: translateY(-3px);
+        }
+
+        .secondary-button {
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+        }
+
+        .secondary-button:hover {
+            border-color: var(--red);
+            color: var(--red);
+            transform: translateY(-3px);
+        }
+
+        .hero-bottom {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            margin-top: 75px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            color: #a8a8a8;
+            font-family: "Share Tech Mono", monospace;
+            font-size: 10px;
+            letter-spacing: 1px;
+        }
+
+        /* GENERAL SECTIONS */
+
+        .section {
+            padding: 110px 0;
+            position: relative;
+        }
+
+        .section-heading {
+            margin-bottom: 45px;
+        }
+
+        .section-heading h2 {
+            margin-top: 15px;
+            font-family: "Orbitron", "Noto Sans SC", sans-serif;
+            font-size: clamp(30px, 5vw, 48px);
+            font-weight: 800;
+            line-height: 1.3;
+            text-transform: uppercase;
+        }
+
+        .section-heading h2 span {
+            color: var(--red);
+        }
+
+        .section-intro {
+            max-width: 600px;
+            margin-top: 15px;
+            color: var(--gray);
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        /* ABOUT */
+
+        .about-section {
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .about-layout {
+            display: grid;
+            grid-template-columns: 0.85fr 1.15fr;
+            align-items: center;
+            gap: 70px;
+        }
+
+        .about-image-wrapper {
+            position: relative;
+            max-width: 400px;
+            margin: auto;
+            width: 100%;
+        }
+
+        .image-frame {
+            position: relative;
+            padding: 12px;
+            border: 1px solid var(--border);
+            background: linear-gradient(
+                145deg,
+                rgba(255, 36, 56, 0.13),
+                transparent 60%
+            );
+        }
+
+        .image-frame::before,
+        .image-frame::after {
+            content: "";
+            position: absolute;
+            width: 45px;
+            height: 45px;
+            border-color: var(--red);
+            border-style: solid;
+            pointer-events: none;
+        }
+
+        .image-frame::before {
+            top: -5px;
+            left: -5px;
+            border-width: 2px 0 0 2px;
+        }
+
+        .image-frame::after {
+            right: -5px;
+            bottom: -5px;
+            border-width: 0 2px 2px 0;
+        }
+
+        .profile-image {
+            display: block;
+            width: 100%;
+            aspect-ratio: 4 / 5;
+            object-fit: cover;
+            background: #171717;
+            filter: saturate(0.8);
+            transition: filter 0.4s;
+        }
+
+        .profile-image:hover {
+            filter: saturate(1.15);
+        }
+
+        .image-caption {
+            margin-top: 15px;
+            color: var(--red);
+            font-family: "Share Tech Mono", monospace;
+            font-size: 11px;
+            letter-spacing: 2px;
+        }
+
+        .about-content h3 {
+            margin-top: 15px;
+            font-family: "Orbitron", "Noto Sans SC", sans-serif;
+            font-size: clamp(24px, 3.2vw, 35px);
+            line-height: 1.5;
+        }
+
+        .about-content h3 span {
+            color: var(--red);
+        }
+
+        .about-description {
+            margin-top: 20px;
+            color: #b9b9b9;
+            font-size: 18px;
+            line-height: 1.9;
+        }
+
+        .about-details {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+            margin-top: 28px;
+        }
+
+        .detail-item {
+            padding: 16px;
+            background: var(--card);
+            border-left: 2px solid var(--red);
+        }
+
+        .detail-label {
+            display: block;
+            color: var(--gray);
+            font-family: "Share Tech Mono", monospace;
+            font-size: 10px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .detail-value {
+            display: block;
+            margin-top: 7px;
+            color: white;
+            font-size: 17px;
+            font-weight: 700;
+        }
+
+        /* SKILLS */
+
+        .skills-section {
+            background:
+                linear-gradient(
+                    180deg,
+                    #080808,
+                    #0d0a0b 50%,
+                    #080808
+                );
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 20px;
+        }
+
+        .skill-card {
+            padding: 28px;
+            background: rgba(17, 17, 17, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            position: relative;
+            transition: border-color 0.3s, transform 0.3s;
+        }
+
+        .skill-card:hover {
+            border-color: var(--red);
+            transform: translateY(-4px);
+        }
+
+        .skill-number {
+            color: var(--red);
+            font-family: "Share Tech Mono", monospace;
+            font-size: 12px;
+            letter-spacing: 2px;
+        }
+
+        .skill-card h3 {
+            margin-top: 15px;
+            font-family: "Orbitron", "Noto Sans SC", sans-serif;
+            font-size: 19px;
+            line-height: 1.6;
+        }
+
+        .skill-summary,
+        .skill-details {
+            margin-top: 12px;
+            color: #b4b4b4;
+            font-size: 17px;
+            line-height: 1.7;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 18px;
+        }
+
+        .skill-tags span {
+            padding: 7px 10px;
+            border: 1px solid rgba(255, 36, 56, 0.2);
+            background: rgba(255, 36, 56, 0.06);
+            color: #e0e0e0;
+            font-family: "Share Tech Mono", monospace;
+            font-size: 11px;
+        }
+
+        .skill-details {
+            padding-top: 14px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .skill-toggle {
+            margin-top: 22px;
+            padding: 10px 0;
+            border: none;
+            background: transparent;
+            color: var(--red);
+            font-family: "Orbitron", "Noto Sans SC", sans-serif;
+            font-size: 10px;
+            letter-spacing: 1px;
+            cursor: pointer;
+        }
+
+        .skill-toggle:hover {
+            color: white;
+        }
+
+        .skills-note {
+            margin-top: 28px;
+            color: #8d8d8d;
+            font-family: "Share Tech Mono", monospace;
+            font-size: 11px;
+            line-height: 1.8;
+        }
+
+        /* CONTACT */
+
+        .contact-section {
+            text-align: center;
+        }
+
+        .contact-content {
+            max-width: 750px;
+            margin: auto;
+            padding: 55px 30px;
+            border: 1px solid var(--border);
+            background:
+                radial-gradient(
+                    circle at 50% 0,
+                    rgba(255, 36, 56, 0.12),
+                    transparent 65%
+                ),
+                #0d0d0d;
+        }
+
+        .contact-content h2 {
+            margin-top: 18px;
+            font-family: "Orbitron", "Noto Sans SC", sans-serif;
+            font-size: clamp(29px, 5vw, 48px);
+            line-height: 1.4;
+        }
+
+        .contact-content h2 span {
+            color: var(--red);
+        }
+
+        .contact-description {
+            max-width: 500px;
+            margin: 20px auto 30px;
+            color: #b4b4b4;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .contact-link {
+            min-width: 150px;
+            padding: 15px 18px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            font-family: "Orbitron", "Noto Sans SC", sans-serif;
+            font-size: 10px;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        .contact-link:hover {
+            border-color: var(--red);
+            color: var(--red);
+            box-shadow: 0 0 20px rgba(255, 36, 56, 0.12);
+        }
+
+        /* ENDING */
+
+        .ending-section {
+            min-height: 65vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-top: 1px solid rgba(255, 36, 56, 0.18);
+            background:
+                radial-gradient(
+                    ellipse at center,
+                    rgba(255, 36, 56, 0.11),
+                    transparent 60%
+                ),
+                #080808;
+        }
+
+        .ending-content {
+            width: min(900px, 90%);
+            padding: 80px 0;
+        }
+
+        .ending-content h2 {
+            margin-top: 25px;
+            font-family: "Orbitron", "Noto Sans SC", sans-serif;
+            font-size: clamp(55px, 12vw, 130px);
+            font-weight: 900;
+            letter-spacing: -3px;
+            line-height: 1.15;
+            text-shadow: 0 0 30px rgba(255, 36, 56, 0.1);
+        }
+
+        .ending-content h2 span {
+            color: var(--red);
+            text-shadow:
+                0 0 12px rgba(255, 36, 56, 0.45),
+                0 0 35px rgba(255, 36, 56, 0.2);
+        }
+
+        .ending-subtitle {
+            margin-top: 20px;
+            color: #aaa;
+            font-family: "Share Tech Mono", monospace;
+            font-size: 12px;
+            letter-spacing: 3px;
+        }
+
+        .back-to-top {
+            display: inline-block;
+            margin-top: 35px;
+            padding: 14px 20px;
+            border: 1px solid var(--red);
+            font-family: "Orbitron", "Noto Sans SC", sans-serif;
+            font-size: 10px;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        .back-to-top:hover {
+            background: var(--red);
+            box-shadow: 0 0 25px rgba(255, 36, 56, 0.3);
+        }
+
+        /* FOOTER */
+
+        .site-footer {
+            padding: 22px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            color: #888;
+            font-family: "Share Tech Mono", monospace;
+            font-size: 11px;
+            text-align: center;
+            line-height: 1.8;
+        }
+
+        .site-footer span {
+            color: var(--red);
+        }
+
+        /* ANIMATIONS */
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(25px);
+            transition:
+                opacity 0.7s ease,
+                transform 0.7s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ACCESSIBILITY */
+
+        :focus-visible {
+            outline: 2px solid var(--red);
+            outline-offset: 5px;
+        }
+
+        /* RESPONSIVE DESIGN */
+
+        @media (max-width: 800px) {
+            .nav-container {
+                flex-wrap: wrap;
+            }
+
+            .navigation {
+                order: 3;
+                width: 100%;
+                justify-content: center;
+                gap: 20px;
+                flex-wrap: wrap;
+            }
+
+            .header-button {
+                margin-left: auto;
+            }
+
+            .about-layout {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .about-image-wrapper {
+                max-width: 320px;
+            }
+
+            .about-content {
+                text-align: center;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 80px 0;
+            }
+
+            .hero-content {
+                margin-top: 130px;
+            }
+
+            .hero-bottom {
+                margin-top: 50px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .site-header {
+                padding: 17px 0;
+            }
+
+            .logo {
+                font-size: 20px;
+            }
+
+            .navigation {
+                gap: 14px;
+            }
+
+            .navigation a {
+                font-size: 9px;
+            }
+
+            .header-button {
+                padding: 9px 10px;
+                font-size: 9px;
+            }
+
+            .hero-title {
+                font-size: clamp(39px, 11vw, 60px);
+                letter-spacing: -2px;
+            }
+
+            .hero-description {
+                font-size: 17px;
+            }
+
+            .hero-bottom {
+                font-size: 9px;
+                flex-wrap: wrap;
+            }
+
+            .about-details {
+                grid-template-columns: 1fr;
+                text-align: left;
+            }
+
+            .skill-card {
+                padding: 22px;
+            }
+
+            .contact-content {
+                padding: 40px 18px;
+            }
+
+            .ending-content h2 {
+                letter-spacing: -2px;
+            }
+
+            .ending-subtitle {
+                font-size: 10px;
+                letter-spacing: 2px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+
+            .reveal {
+                opacity: 1;
+                transform: none;
+            }
+        }
+    </style>
+</head>
+
+<body id="top">
+
+    <!-- NAVIGATION -->
+    <header class="site-header">
+        <div class="nav-container">
+
+            <a href="#home" class="logo" aria-label="Sunil Naik Home">
+                S<span>N</span>.
+            </a>
+
+            <nav class="navigation" aria-label="Main navigation">
+                <a href="#home" class="active">HOME</a>
+                <a href="#about">ABOUT</a>
+                <a href="#skills">SKILLS</a>
+                <a href="#contact">CONTACT</a>
+            </nav>
+
+            <a href="#contact" class="header-button">
+                CONNECT ↗
+            </a>
+
+        </div>
+    </header>
+
+
+    <!-- HOME / CINEMATIC CAR INTRO -->
+    <main>
+
+        <section class="hero-section" id="home">
+
+            <!-- Keep your existing video path -->
+            <video
+                class="hero-video"
+                id="carVideo"
+                autoplay
+                muted
+                playsinline
+                preload="metadata"
+                poster="assets/images/profile.jpeg"
+                aria-label="Cinematic car introduction video">
+
+                <source
+                    src="assets/videos/car-intro.mp4"
+                    type="video/mp4">
+
+            </video>
+
+            <div class="hero-overlay"></div>
+
+            <div class="hero-content">
+
+                <div class="hero-label">
+                    未来 · CYBERSECURITY
+                </div>
+
+                <h1 class="hero-title">
+                    SUNIL
+                    <span>NAIK.</span>
+                </h1>
+
+                <p class="hero-description">
+                    Cybersecurity student exploring network security,
+                    ethical hacking and digital defense.
+                    Learning every day. Building real skills.
+                </p>
+
+                <div class="hero-actions">
+
+                    <a href="#about" class="primary-button">
+                        EXPLORE MY WORLD ↘
+                    </a>
+
+                    <a href="#contact" class="secondary-button">
+                        CONTACT ME ↗
+                    </a>
+
+                </div>
+
+                <div class="hero-bottom">
+                    <span>CYBERSECURITY STUDENT</span>
+                    <span>LEARN · BUILD · SECURE</span>
+                    <span>INDIA / IN</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ABOUT -->
+        <section class="section about-section" id="about">
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+                    <div class="section-eyebrow">
+                        01 / ABOUT ME
+                    </div>
+
+                    <h2>
+                        BEHIND THE <span>SCREEN.</span>
+                    </h2>
+
+                    <p class="section-intro">
+                        A little about my background, interests
+                        and cybersecurity journey.
+                    </p>
+                </div>
+
+                <div class="about-layout">
+
+                    <div class="about-image-wrapper reveal">
+
+                        <div class="image-frame">
+
+                            <!-- Keep your existing profile image path -->
+                            <img
+                                class="profile-image"
+                                src="assets/images/profile.jpeg"
+                                alt="Sunil Naik profile photo"
+                                loading="lazy">
+
+                        </div>
+
+                        <p class="image-caption">
+                            // THE PERSON BEHIND THE CODE
+                        </p>
+
+                    </div>
+
+                    <div class="about-content reveal">
+
+                        <div class="content-label">
+                            WHO AM I?
+                        </div>
+
+                        <h3>
+                            LEARNER BY DAY.
+                            <span>SECURITY MINDED.</span>
+                        </h3>
+
+                        <p class="about-description">
+                            Hello, I'm Sunil Naik. I'm currently studying
+                            Diploma in Computer Science and Engineering,
+                            with an interest in Cybersecurity.
+                        </p>
+
+                        <p class="about-description">
+                            I'm developing my knowledge of networking,
+                            Linux, security tools and programming.
+                            My goal is to build practical skills and
+                            work toward a SOC Analyst role.
+                        </p>
+
+                        <div class="about-details">
+
+                            <div class="detail-item">
+                                <span class="detail-label">
+                                    EDUCATION
+                                </span>
+
+                                <span class="detail-value">
+                                    Diploma CSE
+                                </span>
+                            </div>
+
+                            <div class="detail-item">
+                                <span class="detail-label">
+                                    INTEREST
+                                </span>
+
+                                <span class="detail-value">
+                                    Cybersecurity
+                                </span>
+                            </div>
+
+                            <div class="detail-item">
+                                <span class="detail-label">
+                                    LEARNING
+                                </span>
+
+                                <span class="detail-value">
+                                    Networking & Linux
+                                </span>
+                            </div>
+
+                            <div class="detail-item">
+                                <span class="detail-label">
+                                    CAREER GOAL
+                                </span>
+
+                                <span class="detail-value">
+                                    SOC Analyst
+                                </span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SKILLS -->
+        <section class="section skills-section" id="skills">
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+
+                    <div class="section-eyebrow">
+                        02 / TECHNICAL ARSENAL
+                    </div>
+
+                    <h2>
+                        MY <span>SKILLS.</span>
+                    </h2>
+
+                    <p class="section-intro">
+                        Technologies and tools I'm learning and
+                        practicing as part of my cybersecurity journey.
+                    </p>
+
+                </div>
+
+
+                <div class="skills-grid">
+
+                    <!-- SKILL 1 -->
+                    <article class="skill-card reveal">
+
+                        <div class="skill-number">01 / CODE</div>
+
+                        <h3>PROGRAMMING & WEB</h3>
+
+                        <p class="skill-summary">
+                            Web development fundamentals and
+                            scripting for practical projects.
+                        </p>
+
+                        <div class="skill-tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>Python</span>
+                            <span>Bash</span>
+                            <span>JavaScript*</span>
+                            <span>PHP*</span>
+                            <span>MySQL*</span>
+                        </div>
+
+                        <button
+                            class="skill-toggle"
+                            type="button"
+                            aria-expanded="false"
+                            aria-controls="skill-code">
+
+                            VIEW DETAILS +
+
+                        </button>
+
+                        <div class="skill-details" id="skill-code" hidden>
+                            HTML and CSS for page structure and styling.
+                            Python and Bash for scripting practice.
+                            JavaScript, PHP and MySQL are areas of
+                            developing understanding.
+                        </div>
+
+                    </article>
+
+
+                    <!-- SKILL 2 -->
+                    <article class="skill-card reveal">
+
+                        <div class="skill-number">02 / SECURITY</div>
+
+                        <h3>CYBERSECURITY TOOLS</h3>
+
+                        <p class="skill-summary">
+                            Tools for network discovery, traffic
+                            inspection and web security practice.
+                        </p>
+
+                        <div class="skill-tags">
+                            <span>Nmap</span>
+                            <span>Wireshark</span>
+                            <span>Burp Suite</span>
+                            <span>OWASP ZAP</span>
+                            <span>Gobuster</span>
+                            <span>Dirb</span>
+                        </div>
+
+                        <button
+                            class="skill-toggle"
+                            type="button"
+                            aria-expanded="false"
+                            aria-controls="skill-security">
+
+                            VIEW DETAILS +
+
+                        </button>
+
+                        <div class="skill-details" id="skill-security" hidden>
+                            Learning network scanning, packet analysis,
+                            web request inspection and directory
+                            enumeration in authorized lab environments.
+                        </div>
+
+                    </article>
+
+
+                    <!-- SKILL 3 -->
+                    <article class="skill-card reveal">
+
+                        <div class="skill-number">03 / SYSTEMS</div>
+
+                        <h3>LINUX & NETWORKING</h3>
+
+                        <p class="skill-summary">
+                            Building foundational knowledge of
+                            operating systems and computer networks.
+                        </p>
+
+                        <div class="skill-tags">
+                            <span>Kali Linux</span>
+                            <span>TCP/IP</span>
+                            <span>HTTP/HTTPS</span>
+                            <span>DNS</span>
+                            <span>CLI</span>
+                        </div>
+
+                        <button
+                            class="skill-toggle"
+                            type="button"
+                            aria-expanded="false"
+                            aria-controls="skill-systems">
+
+                            VIEW DETAILS +
+
+                        </button>
+
+                        <div class="skill-details" id="skill-systems" hidden>
+                            Practicing Linux commands, networking
+                            concepts and packet analysis. Continuing
+                            to improve troubleshooting skills.
+                        </div>
+
+                    </article>
+
+
+                    <!-- SKILL 4 -->
+                    <article class="skill-card reveal">
+
+                        <div class="skill-number">04 / WORKFLOW</div>
+
+                        <h3>DEVELOPMENT TOOLS</h3>
+
+                        <p class="skill-summary">
+                            Tools for coding, version control,
+                            interface planning and collaboration.
+                        </p>
+
+                        <div class="skill-tags">
+                            <span>Git</span>
+                            <span>GitHub</span>
+                            <span>VS Code</span>
+                            <span>Figma</span>
+                            <span>Jira*</span>
+                            <span>Miro*</span>
+                        </div>
+
+                        <button
+                            class="skill-toggle"
+                            type="button"
+                            aria-expanded="false"
+                            aria-controls="skill-workflow">
+
+                            VIEW DETAILS +
+
+                        </button>
+
+                        <div class="skill-details" id="skill-workflow" hidden>
+                            Using VS Code for development and GitHub
+                            for version control and project evidence.
+                            Exploring design and collaboration tools.
+                        </div>
+
+                    </article>
+
+                </div>
+
+                <p class="skills-note">
+                    * Some technologies and tools are still at the
+                    learning stage. Skills are presented honestly.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTACT -->
+        <section class="section contact-section" id="contact">
+
+            <div class="container">
+
+                <div class="contact-content reveal">
+
+                    <div class="section-eyebrow">
+                        03 / GET IN TOUCH
+                    </div>
+
+                    <h2>
+                        LET'S CONNECT<span>.</span>
+                    </h2>
+
+                    <p class="contact-description">
+                        Interested in cybersecurity, learning
+                        opportunities and practical projects?
+                        Connect with me through my profiles.
+                    </p>
+
+                    <div class="contact-links">
+
+                        <!-- Replace with your actual GitHub profile -->
+                        <a
+                            class="contact-link"
+                            href="https://github.com/sunil-naik-cs"
+                            target="_blank"
+                            rel="noopener noreferrer">
+
+                            GITHUB ↗
+
+                        </a>
+
+                        <!-- Your Instagram profile -->
+                        <a
+                            class="contact-link"
+                            href="https://www.instagram.com/official.sunil_naik/"
+                            target="_blank"
+                            rel="noopener noreferrer">
+
+                            INSTAGRAM ↗
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CINEMATIC ENDING -->
+        <section class="ending-section">
+
+            <div class="ending-content reveal">
+
+                <div class="ending-label">
+                    END OF TRANSMISSION
+                </div>
+
+                <h2>
+                    THE <span>END.</span>
+                </h2>
+
+                <p class="ending-subtitle">
+                    未来 · KEEP LEARNING. KEEP BUILDING.
+                </p>
+
+                <a href="#top" class="back-to-top">
+                    BACK TO TOP ↑
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+
+        <div class="container">
+
+            <p>
+                © <span id="currentYear"></span>
+                SUNIL NAIK · CYBERSECURITY PORTFOLIO
+            </p>
+
+            <p>
+                BUILT WITH CURIOSITY <span>♥</span> AND CODE
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- ALL JAVASCRIPT IN THIS FILE -->
+    <script>
+        "use strict";
+
+        // Current year
+        document.getElementById("currentYear").textContent =
+            new Date().getFullYear();
+
+
+        // Car video: play once, then stop
+        const carVideo = document.getElementById("carVideo");
+
+        if (carVideo) {
+            carVideo.loop = false;
+
+            carVideo.addEventListener("ended", function () {
+                carVideo.pause();
+            });
+
+            carVideo.addEventListener("error", function () {
+                console.warn(
+                    "Car video could not load. Check the video file path."
+                );
+            });
+        }
+
+
+        // Reveal sections while scrolling
+        const revealElements = document.querySelectorAll(".reveal");
+
+        const reducedMotion = window.matchMedia(
+            "(prefers-reduced-motion: reduce)"
+        ).matches;
+
+        if ("IntersectionObserver" in window && !reducedMotion) {
+
+            const revealObserver = new IntersectionObserver(
+                function (entries, observer) {
+
+                    entries.forEach(function (entry) {
+
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("visible");
+                            observer.unobserve(entry.target);
+                        }
+
+                    });
+
+                },
+                {
+                    threshold: 0.12
+                }
+            );
+
+            revealElements.forEach(function (element) {
+                revealObserver.observe(element);
+            });
+
+        } else {
+
+            revealElements.forEach(function (element) {
+                element.classList.add("visible");
+            });
+
+        }
+
+
+        // Interactive skill cards
+        const skillButtons = document.querySelectorAll(".skill-toggle");
+
+        skillButtons.forEach(function (button) {
+
+            button.addEventListener("click", function () {
+
+                const detailsId = button.getAttribute("aria-controls");
+                const details = document.getElementById(detailsId);
+
+                if (!details) {
+                    return;
+                }
+
+                const isExpanded =
+                    button.getAttribute("aria-expanded") === "true";
+
+                button.setAttribute(
+                    "aria-expanded",
+                    String(!isExpanded)
+                );
+
+                details.hidden = isExpanded;
+
+                button.textContent = isExpanded
+                    ? "VIEW DETAILS +"
+                    : "HIDE DETAILS −";
+
+            });
+
+        });
+
+
+        // Navigation active state
+        const sections = document.querySelectorAll(
+            "#home, #about, #skills, #contact"
+        );
+
+        const navigationLinks = document.querySelectorAll(
+            ".navigation a"
+        );
+
+        if ("IntersectionObserver" in window) {
+
+            const sectionObserver = new IntersectionObserver(
+                function (entries) {
+
+                    entries.forEach(function (entry) {
+
+                        if (entry.isIntersecting) {
+
+                            navigationLinks.forEach(function (link) {
+
+                                const isCurrent =
+                                    link.getAttribute("href") ===
+                                    "#" + entry.target.id;
+
+                                link.classList.toggle(
+                                    "active",
+                                    isCurrent
+                                );
+
+                            });
+
+                        }
+
+                    });
+
+                },
+                {
+                    threshold: 0.35
+                }
+            );
+
+            sections.forEach(function (section) {
+                sectionObserver.observe(section);
+            });
+
+        }
+
+
+        // Smooth scrolling for internal navigation
+        document.querySelectorAll('a[href^="#"]').forEach(
+            function (link) {
+
+                link.addEventListener("click", function (event) {
+
+                    const targetId = link.getAttribute("href");
+
+                    const target = document.querySelector(targetId);
+
+                    if (target) {
+
+                        event.preventDefault();
+
+                        target.scrollIntoView({
+                            behavior: reducedMotion ? "auto" : "smooth",
+                            block: "start"
+                        });
+
+                        if (history.replaceState) {
+                            history.replaceState(null, "", targetId);
+                        }
+
+                    }
+
+                });
+
+            }
+        );
+    </script>
+
+</body>
+</html>
